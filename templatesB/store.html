@@ -1,0 +1,131 @@
+
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="templatesB/store.css">
+
+
+<style>
+                .thumbnail .header{
+                    width:100%;
+                    height:200px;
+                    background: no-repeat top center;
+                    background-size: cover;
+                }
+</style>
+
+
+
+<div class="row row-1">
+    <div class="col-xs-12 col-sm-offset-6 col-md-offset-6 store-h1-cont">
+        <h1 class="store-h1">STORE</h1>
+        
+    </div>
+   
+</div>
+<div class="row" >
+    <div class="panel-group col-xs-offset-1 col-sm-offset-0 col-xs-10 col-sm-3 col-md-2 " id="y">
+<div class="panel panel-success ">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a href="#x1" ng-click="$event.preventDefault()"  data-toggle="collapse" data-parent="#y">Prices</a>
+        </h4>
+    </div>
+    <div id="x1" class="collapse panel-collapse">
+        <div class="list-group">
+            <a href="#" class="list-group-item">10000 - 20000</a>
+            <a href="#" class="list-group-item">20000 - 30000</a>
+            <a href="#" class="list-group-item">30000 - 40000</a>
+        </div>
+    </div>
+</div>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a href="#x2" ng-click="$event.preventDefault()"  data-toggle="collapse" data-parent="#y">Companies</a>
+        </h4>
+    </div>
+    <div id="x2" class="collapse panel-collapse">
+        <div class="list-group">
+            <a href="#" class="list-group-item">HP</a>
+            <a href="#" class="list-group-item">Toshiba</a>
+            <a href="#" class="list-group-item">Dell</a>
+        </div>
+    </div>
+</div>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a href="#x3" ng-click="$event.preventDefault()"  data-toggle="collapse" data-parent="#y">Condition</a>
+        </h4>
+    </div>
+    <div id="x3" class="collapse panel-collapse">
+        <div class="list-group">
+            <a href="#" class="list-group-item">New</a>
+            <a href="#" class="list-group-item">Refurbished</a>
+            <a href="#" class="list-group-item">Used</a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="tab-container col-xs-offset-1 col-sm-offset-0 col-xs-10 col-sm-9 col-md-10">
+    <ul class="nav nav-tabs">
+    <li class="active"><a ng-click="$event.preventDefault()"  href="#elect" data-toggle="tab">Luxury</a></li>
+    <li><a href="#cloth" ng-click="$event.preventDefault()"  data-toggle="tab">Sports</a></li>
+    <li><a href="#food" ng-click="$event.preventDefault()"  data-toggle="tab">SUV</a></li>
+</ul>
+<div class="tab-content">
+    <div id="elect" class="tab-pane fade active in">
+        <h1>Luxury Cars</h1>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 thumbnail" ng-repeat="product in productsLux">
+                <div class="header" ng-style="{'background-image':'url({{product.img}})'}" >
+                </div>
+                <p class="caption car-name">{{product.name}}<span class="year"> {{product.year}}</span></p>
+                <p class="caption car-disc">{{product.disc}}</p>
+                
+                <div class="buy-container">
+                    <p class="caption col-xs-7 price ">{{product.price}}</p>
+                    <button class="btn col-xs-4 btn-info buy-btn">BUY</button>
+                </div>   
+            </div>
+
+        </div>
+     </div>
+    <div id="cloth" class="tab-pane fade">
+        <h1>Sport Cars</h1>
+        <div class="row">
+             <div class="col-xs-12 col-sm-6  col-md-4 col-lg-3 thumbnail" ng-repeat="product in productsSp">
+                 <div class="header" ng-style="{'background-image':'url({{product.img}})'}"></div>
+                    <p class="caption car-name">{{product.name}}<span class="year">( {{product.year}} )</span></p>
+                    <p class="caption car-disc">{{product.disc}}</p>
+                    <div class="buy-container">
+                        <p class="caption col-xs-7 price ">{{product.price}}</p>
+                        <button class="btn col-xs-4 btn-info buy-btn">BUY</button>
+                 </div> 
+             </div>
+
+        </div>
+    </div>
+    <div id="food" class="tab-pane fade">
+        <h1>SUV</h1>
+            <div class="row">
+             <div class="col-xs-12 col-sm-6  col-md-4 col-lg-3 thumbnail" ng-repeat="product in productsSuv">
+                    <div class="header" ng-style="{'background-image':'url({{product.img}})'}"></div>
+                    <p class="caption car-name">{{product.name}}<span class="year"> ({{product.year}}) </span></p>
+                    <p class="caption car-disc">{{product.disc}}</p>
+                    
+                    <div class="buy-container">
+                        <p class="caption col-xs-7 price ">{{product.price}}</p>
+                        <button class="btn col-xs-4 btn-info buy-btn">BUY</button>
+                    </div> 
+             </div>
+
+        </div>
+    </div>
+</div>
+
+ </div>
+
+
+</div>
+
+

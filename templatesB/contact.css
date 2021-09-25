@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+body{
+    background-color: #2a2a2a;
+}
+
+html{
+    font-family: 'Poppins', sans-serif !important;
+}
+.bg-dark{
+
+    background-color:#1f1f1f !important;
+    
+}
+a{
+    color: white !important;
+}
+h2{
+    font-family: 'Poppins', sans-serif;
+    color: #a5a5a5 !important;
+    font-size: 2.4em;;
+
+}
+.contact-form {
+
+        background-color: #dcdcdc !important;
+        border-radius: 10px !important;
+
+}
+.form-control {
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dcdcdc; 
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #d0b31d52;
+}
+.batch-form>h3{
+    color:rgb(80, 80, 80) !important;
+    font-size: 165%;
+    
+}
+.whole-form{
+    justify-content: center;
+}
+.nav-link:hover{
+color: rgb(233, 200, 150) !important;
+}
+label:not(.fish-lable){
+    font-weight: bold;
+    color: rgb(56, 56, 56);
+}
+.navbar-brand{
+    font-weight: 900 !important;
+    font-family: 'Lobster', cursive !important;
+    font-size: 1.5em;
+
+
+}
+.text-center{
+    color: white;
+}
+hr{
+    border-color: #5043006b;
+}
+.form-title{
+    position: relative !important;
+    height: 90px !important;
+    background: #1f1f1f!important;
+    bottom: 2em !important;
+    padding-top: 25px !important;
+    border-radius: 12px 12px 0px 0px !important;
+    padding-left: 20px;
+    margin-bottom: -25px;
+}
+h3{
+    color: white;
+}
+.input-title-1{
+ padding-right: 31px;
+}
+.input-title-3{
+    padding-right: 19px !important;
+ }
+ .inputs-container{
+  position: relative;
+  right: 2%;
+ }
+ .nav-link{
+    font-weight: 500 !important;
+    border: 1px solid transparent;
+    font-family: 'Poppins', sans-serif;
+
+}
+.active{
+    border: 1px solid #5d4e00;
+    border-radius: 5px;
+}
+.sub-btn{
+    position: relative;
+    left: 6px;
+    background: #7c702c!important;
+    border-color:  #7c702c!important;
+}
+.sub-btn:hover{
+    position: relative;
+    left: 6px;
+    background-color: #5a5120 !important;
+    border-color: solid #5a5120 !important;
+}
+@media (max-width: 575px) {
+    .container{
+        padding: 0 2.5em;
+    }
+}

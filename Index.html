@@ -1,0 +1,147 @@
+<html ng-controller="MainCtrl">
+<head>
+    <meta charset="utf8">
+    <title>AngularJS Single Page Application</title>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="angular-route.js"></script>
+    <script>
+        var app = angular.module("myApp",["ngRoute"])
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/",{
+                    templateUrl:"templatesB/home.html",
+                    controller:"homeCtrl",
+                    css : "home.css"
+                    
+                })
+                .when("/store",{
+                    templateUrl:"templatesB/store.html",
+                    controller:"storeCtrl",
+                    css : "templatesB/store.css",
+                    bootstrap: "bootstrap.min.css"
+                })
+                .when("/forum",{
+                    templateUrl:"templatesB/fourm.html",
+                    controller:"fourmCtrl",
+                    css : "templatesB/forum.css",
+                    bootstrap: "bootstrap.min.css"
+                })
+                .when("/contact",{
+                    templateUrl:"templatesB/fourm.html",
+                    controller:"contactCtrl",
+                    css : "templatesB/contact.css"
+                })
+                .otherwise({
+                    template:"<h1>404 Page Not Found</h1>"
+                })
+        })
+
+        /*app.controller('MainCtrl', function($scope, $routeParams, $route, $location) 
+         {
+            $scope.$watch(function()
+             {
+                return ($route.current && $route.current.css) ? $route.current.css : 'home.css';
+             }, 
+             function(value) 
+             {
+                $scope.css = value;
+             });
+        });*/
+
+        app.controller("homeCtrl",function ($scope,$rootScope) {
+            $rootScope.name="Ali"
+            $scope.animate=function () {
+                $("button").slideUp("slow")
+            }
+        })
+
+        app.controller("storeCtrl",function ($scope,$rootScope) {
+            $scope.productsLux=[
+                {name:"BMW M760Li",disc:"6.6 V12 twin turbo engine",img:'images/lux1.jpg',price:120000, brand:"BMW",year:2020},
+                {name:"Audi A8",disc:"Quattro 4.4 V8 twin turbo engin",img:'images/lux2.jpg',price:40000, brand:"others",year:2017},
+                {name:"Mercedes S-Class",disc:"4-Matic 4.0 V8 twin turbo engine",img:'images/lux3.jpg',price:100400, brand:"Merc",year:2019}, 
+                {name:"Rolls Royce",disc:"(Coupe) 6.6 V12 engine",img:'images/lux4.jpg',price:280000, brand:"others",year:2016}, 
+                {name:"Mercedes W108",disc:"2.2 liter L6 engine",img:'images/lux5.jpg',price:46560, brand:"BMW",year:2020},
+                {name:"Bentley Continental GT",disc:"Twin turbo 6.6 W12 engine",img:'images/lux6.jpg',price:225000, brand:"others",year:2020}, 
+                {name:"Mercedes CLA AMG",disc:"2.0 4-Cyliner twin turbo",img:'images/lux7.jpg',price:55350, brand:"BMW",year:2020},
+                {name:"Lexus RC",disc:"5.0 V8 engine",img:'images/lux8.jpg',price:43900, brand:"others",year:2017}
+
+            ]
+
+
+            $scope.productsSp=[
+                {name:"Lamborghini Huracan",disc:"5.2 V10 engine",img:'images/sp1.jpg',price:251400, brand:"others",year:2020},
+                {name:"Porsche Taycan Turbo",disc:"E-Tron electric motor",img:'images/sp2.jpg',price:187990, brand:"others",year:2021},
+                {name:"BMW M3 (coupe)",disc:"3.0 6-Cylinder twin turbo engine",img:'images/sp3.jpg',price:64000, brand:"BMW",year:2017}, 
+                {name:"Tesla Roadster",disc:"AC electric induction motor",img:'images/sp4.jpg',price:208900, brand:"others",year:2020}, 
+                {name:"Ford Mustang GT",disc:"5.0 Supercharge engine",img:'images/sp5.jpg',price:55000, brand:"others",year:2020},
+                {name:"Toyota Supra",disc:"3.0 L6-Cylinder turbo engine",img:'images/sp6.jpg',price:40800, brand:"others",year:1997}, 
+                {name:"BMW M3 GT",disc:"Kassala",img:'images/sp7.jpg',price:90000, brand:"BMW",year:1975},
+                {name:"Aston Martin Vanquish",disc:"4.7 V8 twin turbo engine",img:'images/sp8.jpg',price:287200, brand:"others",year:2015}
+
+            ]
+
+            $scope.productsSuv=[
+                {name:"Mercedes G63 AMG",disc:"(Brabus) 9.0 V12 twin turbo",img:'images/suv1.jpg',price:66245, brand:"Merc",year:2020},
+                {name:"Lincoln Navigator",disc:"3.5 V6 twin turbo engine",img:'images/suv2.jpg',price:81600, brand:"others",year:2017},
+                {name:"Porsche Cayenne",disc:"4.8 V8 engine",img:'images/suv3.jpg',price:80700, brand:"Merc",year:2019}, 
+                {name:"Mercedes Benz GLE",disc:"3.0 V6 twin turbo",img:'images/suv4.jpg',price:91980, brand:"Merc",year:2016}, 
+                {name:"Volvo XC40",disc:"2.0 4-Cyliner",img:'images/suv5.jpg',price:35900, brand:"others",year:2020},
+                {name:"Jeep Grand Cherokee",disc:"5.7 V8 supercharger",img:'images/suv6.jpg',price:52700, brand:"others",year:2020}, 
+                {name:"Jeep Wrangler",disc:"6.4 V8 supercharger",img:'images/suv7.jpg',price:29250, brand:"others",year:2020},
+                {name:"Skoda Kodiaq",disc:"2.0L 4-Cylinder",img:'images/suv8.jpg',price:40000, brand:"others",year:2017}
+
+            ]
+        })
+
+        app.controller("fourmCtrl",function ($scope,$rootScope) {
+
+        })
+
+        app.filter("priceFilter",function ($rootScope) {
+            return function (products,min,max) {
+                var out=[]
+                if(!min || !max)
+                    return products
+                else {
+                    products.forEach(function (item) {
+                        if (item.price >= min && item.price < max)
+                            out.push(item)
+                    })
+                    return out
+                }
+            }
+        })
+    </script>
+<link rel="stylesheet" href="bootstrap.min.css">
+
+</head>
+<body ng-app="myApp">
+    <nav class="navbar navbar-inverse navbar-fixed-top ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#x">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">Auto Deal</a>
+            </div>
+            <div id="x" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="nav-link" href="#/!">Home</a></li>
+                    <li><a class="nav-link active1" href="#!store">Store</a></li>
+                    <li><a class="nav-link  " href="#!forum">Fourm</a></li>
+                    <li><a class="nav-link cont " href="#!contact">Contact</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+<div class="container" style="margin-top: 60px">
+    <ng-view></ng-view>
+</div>
+</body>
+</html>

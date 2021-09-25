@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+html{
+    font-family: 'Poppins', sans-serif !important;
+}
+body{
+    background-color: #2a2a2a;
+}
+
+
+.navbar{
+
+    background-color:#1f1f1f;
+    padding: 0.345em 0;
+    border: none !important;
+}
+a{
+    color: white !important;
+}
+.nav-link:hover{
+    color: rgb(233, 200, 150) !important;
+    }
+
+.navbar-brand{
+        font-weight: 900 !important;
+        font-family: 'Lobster', cursive !important;
+        font-size: 1.72em;
+        margin-left: 0.42em !important;
+    
+    
+}
+.nav-link{
+    font-weight: 500 !important;
+    border: 1px solid transparent;
+    font-size: 1.14em;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 0.61em;
+}
+.cont{
+    margin-right: 3em;
+}
+.active{
+    border: 1px solid #5d4e00;
+    border-radius: 5px;
+    padding: 10px 8px !important;
+    position: relative;
+    top: 0.37em;
+
+}
+ul {
+    margin-top: 60px;
+}
+.media-body{
+    border-right: solid 1px #444444;
+    padding-right: 30px !important;
+}
+
+.caption{
+    text-align: center;
+}
+.caption>p{
+    color: rgb(214, 214, 214);
+}
+.myfile{
+    background: #484537;
+    color: #aaaaaa;
+    width: 240px;
+    
+}
+.myfile:hover{
+    all: none !important;
+}
+.container{
+    margin-top: 3em;
+}
+.form-row{
+    padding-right: 1.5em;
+}
+.forum-h1{
+    text-align: center;
+    color:#a5a5a5 !important;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 1.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 3em;
+}
+hr{
+    border-color: #5043006b;
+    margin-right: 3em;
+    position: relative;
+    right: 10px;
+}
+.title{
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #ffffff;
+}
+.comment{
+    font-size: 1.2em;
+    color: #b6b6b6;
+}
+.list-group-item{
+    background: #383838;
+    margin-bottom: 0.8em;
+    border: none;
+}
+form{
+    background: #1f1f1f !important;
+    border:none !important;
+
+}
+.control-label{
+    color:#b9b9b9 ;
+}
+.btn-success {
+    background: #6f6428;
+     border: solid #6f6428;
+     position: relative; left: 0px;
+     margin-top: 1.5em;
+}
+.btn-success:hover{
+    background-color: #5a5120;
+    border: solid #5a5120;
+}
+.form-group {
+    height: 3.5em;
+}
+.pic-group{
+    margin-top: 75px !important;
+}
+.form-control{
+    background-color: #424242 ;
+    border-color: #676767;
+    color: rgb(235, 235, 235);
+}
+.form-h2{
+    margin-top: 0px;
+    margin-bottom: 1.1em;
+    color: rgb(112, 112, 112);
+    margin-top: 0.1em;
+}
+.well{
+    margin-top: 3em;
+}
+.form-control:focus {
+    color: rgb(235, 235, 235);
+    background-color: rgb(90, 90, 90);
+    border-color: #676767; 
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #d0b31d52;
+}
